@@ -1,0 +1,71 @@
+{% load static from static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Contact Book </title>
+  <link rel="icon" type="image/x-icon" href="{% static 'contact_book_app/img/ashish.png' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+
+<div>
+	<nav class="navbar navbar-dark bg-primary">
+	  <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url "admin:index" %}">Admin</a>
+                </li>
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/userLogin">Login</a
+                        >
+                    </li>
+                {% endif %}
+               
+            </ul>
+            
+        </div>
+	</nav>
+</div>
+
+
+<div style="height: 20em;">
+  {% block content %}
+
+
+
+
+
+
+  {% endblock %}
+</div>
+
+
+</body>
+</html>
+
+

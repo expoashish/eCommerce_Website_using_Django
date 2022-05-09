@@ -1,0 +1,18 @@
+{% extends "ecommerce/loyout.html" %}
+{% block content %}
+
+<div class="jumbotron">
+    {% if invalidlogin %}
+        <h3>Please enter correct login details!</h3>
+    {% endif %}
+    <form action="{% url 'ecommerce:userLogin' %}" method="POST">
+        {% csrf_token %}
+        <label for="email">email: </label>
+        <input type="text" name="email" placeholder="Enter Email">
+        <label for="password">Password: </label>
+        <input type="password" name="password" placeholder="Enter Password">
+        <input type="Submit" value="Login">
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'ecommerce/layout.html' %}
+{% block content %}
+
+<div class="jumbotron">
+   {% if registered %}
+        <h1>Thanks for registering, Please Log in!</h1>
+    {% else %}
+        <h1>Registration for Customers:</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ var_CustomerForm.as_p }}
+            {{ var_CustomerAddForm.as_p }}
+            <input type="submit" value="Register" class="btn btn-primary">
+        </form>
+    {% endif %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'ecommerce/layout.html' %}
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-3">Register Here!</h1>
+   
+    <hr class="my-2">
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url "ecommerce:registerasvendor" %}" role="button">I'm a Vendor</a>
+        <a class="btn btn-primary btn-lg" href="{% url "ecommerce:registerascustomer" %}" role="button">I'm a Customer</a>
+    </p>
+</div>
+
+{% endblock %}
